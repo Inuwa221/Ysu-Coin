@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--created by shudarshan-->
+<html>
+    <head>
+        <title>Bit coin mining</title>
+    <style>
+
+
+
+    </style>
+    </head>
+    <body>
+        <div id="main">
+    
+            <div class="screen" id="screen">
+            <h1 align="center" id="title">YSU-COIN</h1>
+            
+      <center> <button class="btn" id="start-btn" onClick="play()">PLAY</button></center>
+<hr>
+<p align="center" id="intro"><b>Welcome To Ysu-Coin<br><br><br><br><br> <br><br><br> <br><br><mark>GOOD LUCK!</mark></b></p>
+                            </div>
+            
+            <div id="log_screen" class="log_screen-off">
+            
+  <p id="Title2" align="center"></p>
+<p align="center" id="b" >Ysu-Coin:<br><span id="bitc"></span></p>
+
+<center>
+   <button id= "click" onclick= "point()">Click To<br>Mine</button> 
+</center>
+
+<hr>
+
+<span id="shoptag">Boost</span>
+<br />
+ <span id="clk"></span> <br />
+ <span id="autoclk">Robot level:0</span> <br />
+<button id="lvlupcpu" onclick="clicklvl()"></button>
+<br><br />
+<button id="AutoClick" onclick="AutoClick()">
+</button><br /><br />
+
+<button onClick="info()"></button>
+
+
+                   </div>
+            
+        </div>
+        
+        <script>
+            
+
+function play() {
+          setTimeout(function(){document.getElementById("screen").className = "screen-off";},1000)
+        setTimeout(function(){document.getElementById("log_screen").className = "log_screen";},1000)
+    }
+    var btc = 0
+var clickerlvltext = document.getElementById('lvlupcpu')
+var autolvltext = document.getElementById('AutoClick')
+var scoreshow = document.getElementById('bitc')
+var clk=document.getElementById("clk");
+var autoclk=document.getElementById("autoclk");
+  scoreshow.innerText  = "0";
+
+var clickerlvl = 1
+var clickcosttest = 29
+var clicklvlcost = 30
+
+function clicklvl() {
+  if (btc > clickcosttest) {
+    clickerlvl++
+    btc = btc - clicklvlcost
+      clicklvlcost = clicklvlcost + 20
+    clickcosttest = clickcosttest + 20
+    clickerlvltext.innerText = "Upgrade  Clicker Cost:" + clicklvlcost;
+    clk.innerText="Clicker Level:" + clickerlvl;
+    
+    bitc.innerText = btc;
+    }else{
+        alert("NO Enough Ysu-Coin\n\nTry Mining More")
+    }
+   }
+
+var autocosttest = 49
+var autocost = 50
+var autolvl = 0
+
+function AutoClick() {
+  if (btc > autocosttest) {
+    autolvl ++
+    btc = btc - autocost
+    autocost = autocost + 30
+    autocosttest = autocosttest + 30
+    autolvltext.innerText = "Upgrade Auto Clicker Cost:"   + autocost; 
+    autoclk.innerText ="Auto Clicker level:" + autolvl;
+   
+    bitc.innerText = btc;
+  }else{
+      alert("No Enough Ysu-coin\n\nTry Mining Them")
+  }
+}
+
+    clickerlvltext.innerText = "Multitap:" + clicklvlcost;
+    clk.innerText="Clicker Level:" + clickerlvl;
+    
+    autolvltext.innerText = "Buy Robot:" +  "Cost: " + autocost;
+
+function point() {
+  btc = btc + clickerlvl
+var scoreshow = document.getElementById('scoreshow')
+  bitc.innerText = btc;
+}
+
+var autoclickTimer = setInterval(click, 900)
+function click() {
+  if (autolvl >= 1) {
+    btc = btc + autolvl
+     bitc.innerText = btc;
+  }
+}
+
+
+</script>
+    </body>
+    <style>
+    /*created by shudarshan*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*{
+font-family: 'Open Sans', sans-serif;
+}
+
+body{
+margin:0;
+padding:0;
+    background:#202020;
+    height:100%;
+    
+}
+.screen-off{ display: none;}
+
+
+
+
+.log_screen{ 
+position:absolute ;
+width: 100%; 
+height:150%;
+ 
+  background:#f2f2f2;
+ }
+
+.log_screen-off{ display: none;}
+
+
+#clk{
+   text-align:center; 
+}
+
+#lvlupcpu {  
+    border: true;
+    height: 40px;
+    background-color:#aaa;
+    colr:#F04155;   
+    font-size:20px;
+    font-weight:1000;
+    border-radius:5px;
+}
+
+#AutoClick {  
+    border: true;
+    height: 40px;
+    background-color:#aaa;
+    colr: #F04155;   
+    font-size:20px;
+    font-weight:1000;
+}
+
+button{
+    outline:none ;
+}
+#shoptag {  
+
+    color: black;   
+    font-size:40px;
+    font-weight:lighter;
+    font-family:serif;
+
+}
+
+
+#bitc {  
+    height: 15px;   
+    coor:#8FBE00;   
+    font-size:50px;
+    font-weight:bold;
+}
+
+#b{
+   font-size:50px;
+    font-weight:bold; 
+}
+#Title2{  
+    height: 20x;   
+    background-color:transparent ;
+    padding:10px;
+    color: black;   
+    font-size:30px;
+    font-weight:bold;
+    font-family:serif;
+     border-radius:5px;
+      border:3px solid #aaa;
+     
+}
+#click {  
+    width: 200px;
+    height: 200px;  
+    background-color:orange;
+    color: black;   
+    font-size:30px;
+    font-weight:500;
+    border-radius:100%;
+    border:3px solid;
+    box-shadow:0px 15px 20px rgba(0,0,0,0.3);
+}
+
+#click:active{
+box-shadow:0 5px #666;
+transform:translateY (4px);
+ 
+}
+#title{
+    font-weight:bold;
+    font-family:serif;
+    padding:20px;
+    border:3px solid #fff;
+    border-radius:5px;
+    background-color:#aaa;
+}
+
+
+.btn {
+  padding:30px 20px 20px 20px;
+  background: transparent;
+  cursor:pointer;
+  color: White;
+  font-weight:bold;
+  padding: 15px 60px;
+  border-radius: 6px;
+  border: 3px solid rgba(241, 196, 15,1.0);
+  transition: all 0.3s ease-out;
+}
+
+.btn:hover {
+  background: rgba(241, 196, 15,1.0);
+  color: black;
+}
+#start-btn{
+    
+}
+#intro{
+font-weight:bold;
+fotn-size:20px;
+margin-top:0px;
+    color:white;
+    -webkit-animation:intro 2s linear 0s alternate;
+}
+@-webkit-keyframes intro{
+    0%{margin-top:500px;}
+    100%{margin-top:10px;}
+}
+
+    </style>
+</html>
